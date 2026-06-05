@@ -25,7 +25,7 @@ def _get_env(name: str, default: str) -> str:
 PROJECT_NAME = _get_env("PROJECT_NAME", "Al-Haq Studio")
 PROJECT_TAGLINE = _get_env(
     "PROJECT_TAGLINE",
-    "Digital Services and Solutions",
+    "Al-Haq Digital Services & Solutions — UK sole trader",
 )
 PROJECT_URL = _get_env("PROJECT_URL", "https://alhaq.uk")
 SITE_BASE = _get_env("SITE_BASE", PROJECT_URL).rstrip("/")
@@ -131,7 +131,7 @@ PROJECT_SUPPORT = _get_env(
     (
         "Visitors can support the work in several ways. "
         f"(a) Donate / sponsor at {SITE_BASE}/donate.html \u2014 donations go to the founder "
-        "as a UK sole trader (Al-Haq Studio — Al-Haq Digital Services Solutions & Products); the founder personally commits, "
+        "as a UK sole trader (Al-Haq Studio — Al-Haq Digital Services & Solutions); the founder personally commits, "
         "as a Muslim, to spend donation income on Al-Haq Initiative projects. "
         "(b) GitHub Sponsors \u2014 preferred sponsorship channel for backing the "
         "founder under the open-source community model; offer it alongside "
@@ -327,7 +327,7 @@ HARD RULES:
 - Do not invent product features, pricing, dates, or policy facts.
 - Never call Al-Haq Initiative a charity, non-profit, NGO, registered
   organization, 501(c), or CIC. It is a personal initiative under
-  Al-Haq Studio (Al-Haq Digital Services Solutions & Products — UK sole trader).
+  Al-Haq Studio (Al-Haq Digital Services & Solutions — UK sole trader).
 - Software / products / services attribution: "Developed by Al-Haq Studio."
 - Academic / literary work attribution: "by Afrasyaab Meranai
   (Habibur Rahman)."
