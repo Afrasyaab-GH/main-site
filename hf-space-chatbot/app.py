@@ -25,7 +25,7 @@ def _get_env(name: str, default: str) -> str:
 PROJECT_NAME = _get_env("PROJECT_NAME", "Al-Haq Studio")
 PROJECT_TAGLINE = _get_env(
     "PROJECT_TAGLINE",
-    "Seeking Truth in History, Protecting Health in the Present.",
+    "Digital Services and Solutions",
 )
 PROJECT_URL = _get_env("PROJECT_URL", "https://alhaq.uk")
 SITE_BASE = _get_env("SITE_BASE", PROJECT_URL).rstrip("/")
@@ -35,7 +35,7 @@ PROJECT_DESCRIPTION = _get_env(
         "The Al-Haq Initiative (مبادرة الحق) is a digital and literary movement "
         "for Seeking the Truth. It is the public-facing brand of the founder's "
         "personal effort plus free/community-oriented projects hosted under "
-        "ADS Solutions (Al-Haq Digital Services & Solutions, a UK sole trader). "
+        "Al-Haq Studio (Al-Haq Digital Services & Solutions — UK sole trader). "
         "Mission pillars: Truth in history (primary-source research) and "
         "Protection in the present (digital wellbeing tools), with a public "
         "pillar of Resilience (community). Founder: Afrasyaab Meranai "
@@ -69,7 +69,7 @@ ASSISTANT_STYLE = _get_env(
         "(The Truth). Prioritize primary sources for historical questions and "
         "point users to the relevant page on the website. Never claim Al-Haq "
         "Initiative is a charity or registered organization. Software is "
-        "delivered by ADS Solutions; academic/literary works are authored "
+        "delivered by Al-Haq Studio; academic/literary works are authored "
         "personally by the founder. Avoid promoting any immoral or unethical "
         "behavior."
     ),
@@ -82,9 +82,9 @@ PROJECT_FOUNDER = _get_env(
     (
         "Afrasyaab Meranai (legal name; first name Afrasyaab, surname Meranai), "
         "also known casually as Habibur Rahman. He is the sole founder, "
-        "developer, and writer behind both ADS Solutions and the Al-Haq "
+        "developer, and writer behind both Al-Haq Studio and the Al-Haq "
         "Initiative. Software, products, and services are delivered under "
-        "ADS Solutions (Al-Haq Digital Services & Solutions, a UK sole trader). "
+        "Al-Haq Studio (Al-Haq Digital Services & Solutions — UK sole trader). "
         "Academic and literary works are authored personally by him."
     ),
 )
@@ -101,12 +101,12 @@ PROJECT_GOALS = _get_env(
 PROJECT_PROJECTS = _get_env(
     "PROJECT_PROJECTS",
     (
-        "PRODUCTS (available today, under ADS Solutions): "
+        "PRODUCTS (available today, under Al-Haq Studio): "
         f"AmnShield \u2014 digital protection app for habit management and "
         f"spiritual wellbeing, freemium (free tier + premium plans), see {SITE_BASE}/amn-site/. "
         f"Quran Hub (web app) \u2014 standalone Quran reader at {SITE_BASE}/quran.html. "
         f"Library & Media Hub \u2014 books, audio, and video at {SITE_BASE}/library.html and {SITE_BASE}/media.html. "
-        f"ADS Solutions Digital Services \u2014 specialized web development, "
+        f"Al-Haq Studio \u2014 web development, security, and Islamic app delivery. "
         f""
         "PROJECTS (ongoing / upcoming): "
         f"DeenHub \u2014 Islamic productivity mobile app (prayer times, Qibla, "
@@ -131,7 +131,7 @@ PROJECT_SUPPORT = _get_env(
     (
         "Visitors can support the work in several ways. "
         f"(a) Donate / sponsor at {SITE_BASE}/donate.html \u2014 donations go to the founder "
-        "as a UK sole trader (ADS Solutions); the founder personally commits, "
+        "as a UK sole trader (Al-Haq Studio — Al-Haq Digital Services Solutions & Products); the founder personally commits, "
         "as a Muslim, to spend donation income on Al-Haq Initiative projects. "
         "(b) GitHub Sponsors \u2014 preferred sponsorship channel for backing the "
         "founder under the open-source community model; offer it alongside "
@@ -327,9 +327,8 @@ HARD RULES:
 - Do not invent product features, pricing, dates, or policy facts.
 - Never call Al-Haq Initiative a charity, non-profit, NGO, registered
   organization, 501(c), or CIC. It is a personal initiative under
-  ADS Solutions (UK sole trader).
-- Software / products / services attribution: "Developed by ADS Solutions
-  (Al-Haq Digital Services & Solutions — UK sole trader)."
+  Al-Haq Studio (Al-Haq Digital Services Solutions & Products — UK sole trader).
+- Software / products / services attribution: "Developed by Al-Haq Studio."
 - Academic / literary work attribution: "by Afrasyaab Meranai
   (Habibur Rahman)."
 - Do not promote or endorse immoral, abusive, or unethical behavior.

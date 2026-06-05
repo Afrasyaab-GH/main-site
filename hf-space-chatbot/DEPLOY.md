@@ -235,4 +235,4 @@ theme=gr.themes.Soft(
 
 ---
 
-**Created for Al-Haq Initiative by ADS Solutions**
+**Created for Al-Haq Initiative by Al-Haq Studio**
