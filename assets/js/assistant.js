@@ -1,6 +1,6 @@
 // Al-Haq Assistant Frontend Logic
 (function() {
-  const CHATBOT_URL = window.ALHAQ_CHATBOT_URL || 'https://habib-hf-alhaq-website-chatbot.hf.space';
+  const CHATBOT_URL = window.ALHAQ_CHATBOT_URL || 'https://alhaq-hf-alhaq-website-chatbot.hf.space';
   const CHATBOT_SRC = CHATBOT_URL + (CHATBOT_URL.indexOf('?') === -1 ? '?' : '&') + '__theme=light&context=alhaq-studio';
 
   document.addEventListener('DOMContentLoaded', function() {

@@ -51,7 +51,7 @@ Paste into any page (e.g., `help.html`):
 
 ```html
 <iframe
-    src="https://huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot"
+    src="https://alhaq-hf-alhaq-website-chatbot.hf.space"
     frameborder="0"
     width="100%"
     height="600"
@@ -75,7 +75,7 @@ Your chatbot is now live and embedded on your website.
 ## Test It
 Visit your space URL to chat before embedding:
 ```
-https://huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot
+https://huggingface.co/spaces/Alhaq-HF/alhaq-website-chatbot
 ```
 
 ---

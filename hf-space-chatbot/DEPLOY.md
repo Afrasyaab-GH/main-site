@@ -57,7 +57,7 @@ CMD ["python", "app.py"]
 
 ```html
 <iframe
-	src="https://huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot"
+	src="https://alhaq-hf-alhaq-website-chatbot.hf.space"
 	frameborder="0"
 	width="850"
 	height="600"
@@ -75,7 +75,7 @@ Add to any page (e.g., `help.html`, `contact.html`):
 <section id="chatbot-section" style="margin: 40px 0; padding: 20px; background: #f5f5f5; border-radius: 8px;">
     <h2>💬 Need Help? Chat with Our Guide</h2>
     <iframe
-        src="https://huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot"
+        src="https://alhaq-hf-alhaq-website-chatbot.hf.space"
         frameborder="0"
         width="100%"
         height="600"
@@ -121,7 +121,7 @@ function initChatbot() {
             z-index: 999;
         ">
             <iframe
-                src="https://huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot"
+                src="https://alhaq-hf-alhaq-website-chatbot.hf.space"
                 style="width: 100%; height: 100%; border: none; border-radius: 8px;"
             ></iframe>
         </div>
@@ -210,7 +210,7 @@ theme=gr.themes.Soft(
 2. **Test the chatbot** on your device
 3. **Embed on your website** (add iframe to pages)
 4. **Customize context** (add more Al-Haq details)
-5. **Share the link** (huggingface.co/spaces/YOUR-USERNAME/alhaq-chatbot)
+5. **Share the link** (huggingface.co/spaces/Alhaq-HF/alhaq-website-chatbot)
 
 ---
 

@@ -1,452 +1,325 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Al-Haq Studio | Ethical Tech for a Better Future</title>
-  <meta name="description" content="Al-Haq Studio — UK-based software studio building privacy-first mobile applications, productivity tools, and digital solutions rooted in integrity." />
-  <meta name="keywords" content="Android app development, UK software studio, privacy-first apps, AmnShield, focus apps, ethical technology" />
-  <link rel="canonical" href="https://alhaq.uk/" />
+<!doctype html>
+<html lang="en" class="light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Haq Studio | Ethical Tech for a Better Future</title>
+    <meta name="description" content="Al-Haq Studio (formerly ADSS) — UK-based software studio building privacy-first mobile applications, productivity tools, and digital solutions rooted in integrity." />
+    <meta name="keywords" content="Android app development, UK software studio, privacy-first apps, AmnShield, focus apps, ethical technology" />
+    <link rel="canonical" href="https://alhaq.uk/" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='100' y2='100'%3E%3Cstop offset='0%25' stop-color='%23C9A84C'/%3E%3Cstop offset='100%25' stop-color='%238B6914'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='68' font-family='sans-serif' font-weight='bold' font-size='55' fill='%230A0D0F' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='100' y2='100'%3E%3Cstop offset='0%25' stop-color='%23C9A84C'/%3E%3Cstop offset='100%25' stop-color='%238B6914'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='68' font-family='sans-serif' font-weight='bold' font-size='55' fill='%230A0D0F' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://alhaq.uk/" />
-  <meta property="og:title"       content="Al-Haq Studio" />
-  <meta property="og:description" content="UK-based software studio building privacy-first mobile apps and digital tools rooted in integrity." />
-  <meta property="og:image"       content="https://alhaq.uk/assets/og-adss.png" />
-  <meta name="twitter:card"       content="summary_large_image" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold:    #C9A84C;
-      --gold-lt: #E8C96A;
-      --dark:    #0A0D0F;
-      --dark2:   #111417;
-      --dark3:   #181C20;
-      --border:  rgba(201,168,76,0.18);
-      --text:    #E8EAE6;
-      --muted:   #7A8490;
-      --radius:  12px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ── Noise texture overlay ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0; opacity: 0.4;
-    }
-
-    /* ── Nav ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2rem;
-      background: rgba(10,13,15,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .nav-logo-mark {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--gold), #8B6914);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 1rem; color: #0A0D0F;
-    }
-    .nav-logo-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); }
-    .nav-logo-text span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color .2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold); color: #0A0D0F; border: none; border-radius: 8px;
-      padding: 0.5rem 1.25rem; font-weight: 600; font-size: 0.875rem;
-      cursor: pointer; text-decoration: none; transition: opacity .2s;
-    }
-    .nav-cta:hover { opacity: 0.85; }
-
-    /* ── Hero ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 2rem 4rem;
-      position: relative;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border);
-      border-radius: 100px; padding: 0.375rem 1rem;
-      font-size: 0.8rem; font-weight: 500; color: var(--gold);
-      margin-bottom: 2rem;
-    }
-    .hero-badge::before { content: '●'; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem; max-width: 820px;
-    }
-    h1 .gold { color: var(--gold); }
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted);
-      max-width: 600px; margin: 0 auto 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-    .btn-primary {
-      background: var(--gold); color: #0A0D0F;
-      border: none; border-radius: 10px;
-      padding: 0.875rem 2rem; font-weight: 700; font-size: 1rem;
-      cursor: pointer; text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 0 32px rgba(201,168,76,0.25);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 48px rgba(201,168,76,0.4); }
-    .btn-outline {
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 0.875rem 2rem; font-weight: 600; font-size: 1rem;
-      cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* ── Glow ── */
-    .hero-glow {
-      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* ── Stats bar ── */
-    .stats-bar {
-      display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
-      padding: 2.5rem 2rem; border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--dark2);
-    }
-    .stat { text-align: center; }
-    .stat-num { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--gold); }
-    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
-
-    /* ── Section ── */
-    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-tag {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
-    }
-    h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700;
-      line-height: 1.15; margin-bottom: 1.25rem;
-    }
-    .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 3rem; font-size: 1.05rem; }
-
-    /* ── Services grid ── */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .service-card {
-      background: var(--dark2); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 2rem; transition: border-color .2s, transform .2s;
-    }
-    .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-    .service-icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 1.25rem;
-    }
-    .service-card h3 { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
-
-    /* ── Products grid ── */
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .product-card {
-      background: var(--dark2); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.75rem; text-decoration: none; color: var(--text);
-      transition: border-color .2s, transform .2s; display: block;
-    }
-    .product-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-    .product-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .product-icon { font-size: 2rem; }
-    .product-badge {
-      font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
-      border-radius: 100px; letter-spacing: 0.05em;
-    }
-    .badge-live { background: rgba(34,197,94,0.15); color: #4ADE80; border: 1px solid rgba(34,197,94,0.3); }
-    .badge-beta { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid var(--border); }
-    .badge-dev  { background: rgba(148,163,184,0.1); color: var(--muted); border: 1px solid rgba(148,163,184,0.2); }
-    .product-card h3 { font-weight: 600; margin-bottom: 0.4rem; }
-    .product-card p { color: var(--muted); font-size: 0.875rem; }
-
-    /* ── Values ── */
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-    .value-card {
-      text-align: center; padding: 2rem 1.5rem;
-      background: var(--dark2); border: 1px solid var(--border); border-radius: var(--radius);
-    }
-    .value-card .icon { font-size: 2rem; margin-bottom: 1rem; }
-    .value-card h3 { font-weight: 600; margin-bottom: 0.5rem; }
-    .value-card p { color: var(--muted); font-size: 0.875rem; }
-
-    /* ── CTA section ── */
-    .cta-section {
-      text-align: center; padding: 5rem 2rem;
-      background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    }
-    .cta-section h2 { margin-bottom: 1rem; }
-    .cta-section p { color: var(--muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-
-    /* ── Footer ── */
-    footer {
-      padding: 3rem 2rem; display: flex;
-      align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
-      border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto;
-    }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { color: var(--muted); font-size: 0.875rem; text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { color: var(--muted); font-size: 0.8rem; }
-
-    /* ── Divider ── */
-    .gold-line {
-      width: 60px; height: 3px; border-radius: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 640px) {
-      nav { padding: 1rem; }
-      .nav-links { display: none; }
-      .stats-bar { gap: 2rem; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- Navigation -->
-<nav>
-  <a class="nav-logo" href="/">
-    <div class="nav-logo-mark">A</div>
-    <span class="nav-logo-text">Al-Haq <span>Studio</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#values">About</a></li>
-    <li><a href="https://alhaq-initiative.org" target="_blank" rel="noopener">Initiative</a></li>
-  </ul>
-  <a class="nav-cta" href="mailto:contact@alhaq.uk">Work With Us</a>
-</nav>
-
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-badge">Al-Haq Studio</div>
-  <h1>Digital Products, Services<br/>&amp; <span class="gold">Solutions.</span></h1>
-  <p class="hero-sub">
-    We are a UK-based software studio designing privacy-first mobile applications
-    and ethical technology — crafted with integrity for a better digital future.
-  </p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="#products">Explore Our Products</a>
-    <a class="btn-outline" href="mailto:contact@alhaq.uk">Get In Touch</a>
-  </div>
-</div>
-
-<!-- Stats -->
-<div class="stats-bar">
-  <div class="stat">
-    <div class="stat-num">6+</div>
-    <div class="stat-label">Products Built</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">Privacy-First</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">UK</div>
-    <div class="stat-label">Based Studio</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">0</div>
-    <div class="stat-label">Data Sold</div>
-  </div>
-</div>
-
-<!-- Products -->
-<section id="products">
-  <div class="section-tag">Our Products</div>
-  <div class="gold-line"></div>
-  <h2>Built In-House.<br/>Used Every Day.</h2>
-  <p class="section-sub">We don't just consult — we ship. Every product we build is used by real people.</p>
-  <div class="products-grid">
-    <a class="product-card" href="https://amnshield.com" target="_blank" rel="noopener">
-      <div class="product-header">
-        <span class="product-icon">🛡️</span>
-        <span class="product-badge badge-live">LIVE</span>
+    <!-- Tailwind CDN + design-system config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0A2540',
+              'on-primary': '#ffffff',
+              'primary-container': '#c8d8f0',
+              'on-primary-container': '#0A2540',
+              secondary: '#D4AF37',
+              'on-secondary': '#0A2540',
+              'secondary-container': '#fdf3c7',
+              'on-secondary-container': '#5a460a',
+              'surface-container-lowest': '#ffffff',
+              'surface-container-low': '#f5f7fb',
+              'surface-container': '#edf0f6',
+              'surface-container-high': '#e3e8f0',
+              'surface-container-highest': '#d6dce8',
+              'surface-bright': '#fafbfd',
+              'on-surface': '#111827',
+              'on-surface-variant': '#4b5563',
+              outline: '#6b7280',
+              'outline-variant': '#d1d5db',
+              background: '#f8f9fc',
+              'inverse-surface': '#1e2a3a',
+              'inverse-on-surface': '#9ca3af',
+              error: '#b91c1c',
+              'on-error': '#ffffff',
+            },
+            fontFamily: {
+              display: ['Source Serif 4', 'Georgia', 'serif'],
+              headline: ['Source Serif 4', 'Georgia', 'serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Inter', 'sans-serif'],
+              arabic: ['Amiri', 'serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body { background-color: #f8f9fc; color: #111827; }
+      html.dark body { background-color: #0b1220; color: #e5e7eb; }
+      html.dark .bg-surface-container { background-color: #111827; }
+      html.dark .bg-surface-container-low { background-color: #0f172a; }
+      html.dark .bg-surface-container-lowest { background-color: #1e293b; }
+      html.dark .bg-surface-container-high { background-color: #334155; }
+      html.dark .border-outline-variant { border-color: #475569; }
+      html.dark .text-primary { color: #D4AF37; } /* Mapping primary text to gold in dark mode for contrast */
+      html.dark .bg-primary { background-color: #D4AF37; color: #0A2540; } /* Mapping solid primary to gold */
+      html.dark .text-on-surface-variant { color: #94a3b8; }
+      html.dark .text-on-surface { color: #f8fafc; }
+    </style>
+  </head>
+  <body class="font-body text-base antialiased transition-colors duration-300">
+    
+    <!-- Header -->
+    <header class="bg-surface-container-lowest/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/alhaq_logo.png" alt="Al-Haq Studio Logo" class="h-10 rounded object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="h-10 w-10 rounded bg-primary text-on-primary items-center justify-center font-bold text-xl">A</div>
+          <span class="text-xl font-bold text-primary font-headline">Al-Haq <span class="text-secondary font-normal">Studio</span></span>
+        </a>
+        <nav class="hidden md:flex gap-8">
+          <a href="#products" class="text-sm font-medium text-on-surface hover:text-secondary transition">Products</a>
+          <a href="#services" class="text-sm font-medium text-on-surface hover:text-secondary transition">Services</a>
+          <a href="#values" class="text-sm font-medium text-on-surface hover:text-secondary transition">About</a>
+          <a href="https://alhaq-initiative.org" class="text-sm font-medium text-on-surface hover:text-secondary transition" target="_blank">Initiative</a>
+        </nav>
+        <a href="mailto:contact@alhaq.uk" class="hidden md:inline-flex bg-primary text-on-primary px-5 py-2 text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition">Work With Us</a>
       </div>
-      <h3>AmnShield</h3>
-      <p>Privacy-first digital protection for Android. App blocker, content filter, focus tools, and screen time management.</p>
-    </a>
-    <a class="product-card" href="https://alhaq-initiative.org/deenhub" target="_blank" rel="noopener">
-      <div class="product-header">
-        <span class="product-icon">📖</span>
-        <span class="product-badge badge-beta">BETA</span>
-      </div>
-      <h3>DeenHub</h3>
-      <p>A comprehensive Islamic lifestyle app — Quran reader, prayer times, and daily remembrance tools.</p>
-    </a>
-    <div class="product-card">
-      <div class="product-header">
-        <span class="product-icon">🌐</span>
-        <span class="product-badge badge-dev">IN DEV</span>
-      </div>
-      <h3>DeenShield Extension</h3>
-      <p>Browser extension bringing AmnShield's content filtering to Chrome and Edge for desktop protection.</p>
-    </div>
-    <div class="product-card">
-      <div class="product-header">
-        <span class="product-icon">📊</span>
-        <span class="product-badge badge-dev">IN DEV</span>
-      </div>
-      <h3>CreatorPlus</h3>
-      <p>Productivity and content creation toolkit for Muslim creators building halal digital media.</p>
-    </div>
-    <div class="product-card">
-      <div class="product-header">
-        <span class="product-icon">🕌</span>
-        <span class="product-badge badge-dev">IN DEV</span>
-      </div>
-      <h3>QuranHub</h3>
-      <p>A dedicated Quran study platform with word-by-word translation, tafsir, and personalised study plans.</p>
-    </div>
-    <a class="product-card" href="https://alhaq-initiative.org" target="_blank" rel="noopener">
-      <div class="product-header">
-        <span class="product-icon">💚</span>
-        <span class="product-badge badge-live">LIVE</span>
-      </div>
-      <h3>Al-Haq Initiative</h3>
-      <p>Our community-focused mission wing — delivering free, high-quality digital tools, translations, and resources built and backed by Al-Haq Studio.</p>
-    </a>
-  </div>
-</section>
+    </header>
 
-<!-- Services -->
-<section id="services">
-  <div class="section-tag">What We Do</div>
-  <div class="gold-line"></div>
-  <h2>Digital Services<br/>Done Right</h2>
-  <p class="section-sub">From native Android apps to web platforms, we deliver clean, fast, and honest software.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <h3>Android App Development</h3>
-      <p>Native Kotlin applications with clean architecture, robust offline support, and zero telemetry. Built to Google Play standards.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔒</div>
-      <h3>Privacy & Security Consulting</h3>
-      <p>App architecture review, data minimisation audits, and Google Play compliance — keeping your users' trust intact.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🌐</div>
-      <h3>Web Development</h3>
-      <p>Fast, accessible, SEO-optimised websites and web apps. Firebase-hosted, Cloudflare-secured, and built to last.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">⚙️</div>
-      <h3>Digital Solutions & Automation</h3>
-      <p>Custom tooling, workflow automation, and system integrations that save time and reduce manual overhead.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🚀</div>
-      <h3>Google Play Publishing</h3>
-      <p>End-to-end app publishing — in-app billing setup, Play Console management, store listing optimisation, and policy compliance.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🤝</div>
-      <h3>Tech Partnerships</h3>
-      <p>Long-term collaborative partnerships for UK organisations and startups needing a trusted technical co-founder or studio.</p>
-    </div>
-  </div>
-</section>
+    <main class="pt-24 pb-16">
+      <!-- HERO -->
+      <section class="bg-surface-container py-24 md:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <span class="inline-block bg-secondary/20 text-secondary border border-secondary/30 px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full">Al-Haq Studio</span>
+          <h1 class="text-4xl md:text-6xl font-display font-bold text-primary mb-6 leading-tight">Digital Products, Services<br/>&amp; <span class="text-secondary">Solutions.</span></h1>
+          <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10">A UK-based software studio founded and developed by <strong>Afrasyaab Meranai</strong> — building privacy-first applications and ethical digital solutions rooted in integrity.</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#products" class="bg-primary text-on-primary px-8 py-4 text-sm font-bold uppercase tracking-widest hover:opacity-90 transition">Explore Our Products</a>
+            <a href="mailto:contact@alhaq.uk" class="border border-primary text-primary px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-surface-container-high transition">Get In Touch</a>
+          </div>
+        </div>
+      </section>
 
-<!-- Values -->
-<section id="values">
-  <div class="section-tag">Our Principles</div>
-  <div class="gold-line"></div>
-  <h2>Technology Rooted<br/>in Integrity</h2>
-  <p class="section-sub">Every decision we make is guided by these non-negotiables.</p>
-  <div class="values-grid">
-    <div class="value-card">
-      <div class="icon">🔐</div>
-      <h3>Privacy by Default</h3>
-      <p>We collect no data we don't need. Your users' privacy is a right, not a feature.</p>
-    </div>
-    <div class="value-card">
-      <div class="icon">🤲</div>
-      <h3>Honest Business</h3>
-      <p>No dark patterns, no hidden fees, no manipulative design. We build things we'd give to our families.</p>
-    </div>
-    <div class="value-card">
-      <div class="icon">🌍</div>
-      <h3>Community Impact</h3>
-      <p>Our free tools and community solutions are offered directly through the Al-Haq Initiative, entirely backed by our studio.</p>
-    </div>
-    <div class="value-card">
-      <div class="icon">⚡</div>
-      <h3>Craft & Quality</h3>
-      <p>We ship things that work. Tested, optimised, and maintained — not abandoned after launch.</p>
-    </div>
-  </div>
-</section>
+      <!-- STATS -->
+      <section class="bg-surface-container-lowest border-y border-outline-variant py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-display font-bold text-secondary mb-1">6+</div>
+            <div class="text-xs uppercase tracking-widest text-on-surface-variant font-medium">Products Built</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-secondary mb-1">100%</div>
+            <div class="text-xs uppercase tracking-widest text-on-surface-variant font-medium">Privacy-First</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-secondary mb-1">UK</div>
+            <div class="text-xs uppercase tracking-widest text-on-surface-variant font-medium">Based Studio</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-secondary mb-1">0</div>
+            <div class="text-xs uppercase tracking-widest text-on-surface-variant font-medium">Data Sold</div>
+          </div>
+        </div>
+      </section>
 
-<!-- CTA -->
-<div class="cta-section">
-  <div class="section-tag">Get Started</div>
-  <h2>Have a Project in Mind?</h2>
-  <p>Whether you need a mobile app, a web platform, or a trusted technical partner — we'd love to hear from you.</p>
-  <a class="btn-primary" href="mailto:contact@alhaq.uk">contact@alhaq.uk</a>
-</div>
+      <!-- PRODUCTS -->
+      <section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">Our Products</span>
+        <div class="w-16 h-1 bg-secondary mb-6"></div>
+        <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">Built In-House.<br/>Used Every Day.</h2>
+        <p class="text-on-surface-variant max-w-2xl mb-12 text-lg">We don't just consult — we ship. Every product we build and maintain is used by real people. All our projects are open source — free tools are distributed through the <a href="https://alhaq-initiative.org" class="text-secondary hover:underline" target="_blank">Al-Haq Initiative</a>.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="https://amnshield.com" class="bg-surface-container-lowest border border-outline-variant p-8 group hover:border-secondary transition block relative" target="_blank" rel="noopener">
+            <div class="flex justify-between items-start mb-6">
+              <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-10 rounded object-contain shadow-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <span style="display:none;" class="material-symbols-outlined text-4xl text-primary">shield</span>
+              <span class="bg-green-100 text-green-800 border border-green-200 text-[10px] font-bold uppercase tracking-wider px-2 py-1">LIVE · OPEN SOURCE</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2 group-hover:text-secondary transition">AmnShield</h3>
+            <p class="text-sm text-on-surface-variant">Privacy-first digital protection for Android. System blocker with 50k+ domain database, keyword filtering, Reels blocking, and focus rules. Free Access Program available.</p>
+          </a>
+          <a href="https://github.com/Afrasyaab-GH/AmnGaze" class="bg-surface-container-lowest border border-outline-variant p-8 group hover:border-secondary transition block relative" target="_blank" rel="noopener">
+            <div class="flex justify-between items-start mb-6">
+              <img src="/assets/images/amngaze_logo.png" alt="AmnGaze Logo" class="h-10 rounded object-contain shadow-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <span style="display:none;" class="material-symbols-outlined text-4xl text-primary">blur_on</span>
+              <span class="bg-gray-200 text-gray-600 border border-gray-300 text-[10px] font-bold uppercase tracking-wider px-2 py-1">IN DEV · OPEN SOURCE</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2 group-hover:text-secondary transition">AmnGaze</h3>
+            <p class="text-sm text-on-surface-variant">On-device AI visual content protection. Offline-first screen moderation using local TensorFlow Lite models — available as an Android app and a free browser extension. Free Access Program available.</p>
+          </a>
+          <a href="https://alhaq-initiative.org/deenhub" class="bg-surface-container-lowest border border-outline-variant p-8 group hover:border-secondary transition block relative" target="_blank" rel="noopener">
+            <div class="flex justify-between items-start mb-6">
+              <span class="material-symbols-outlined text-4xl text-primary block">menu_book</span>
+              <span class="bg-secondary/20 text-secondary border border-secondary/30 text-[10px] font-bold uppercase tracking-wider px-2 py-1">BETA</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2 group-hover:text-secondary transition">DeenHub</h3>
+            <p class="text-sm text-on-surface-variant">Islamic lifestyle app — Quran reader, prayer times, Qibla, daily adhkaar, and productivity tools.</p>
+          </a>
+          <div class="bg-surface-container-low border border-outline-variant p-8 relative">
+            <div class="flex justify-between items-start mb-6">
+              <span class="material-symbols-outlined text-4xl text-primary block opacity-70">extension</span>
+              <span class="bg-gray-200 text-gray-600 border border-gray-300 text-[10px] font-bold uppercase tracking-wider px-2 py-1">IN DEV</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2">Amn Extension</h3>
+            <p class="text-sm text-on-surface-variant">Browser extension bringing AmnShield's domain and keyword filtering to Chrome, Edge, and Firefox. Free &amp; open source.</p>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant p-8 relative">
+            <div class="flex justify-between items-start mb-6">
+              <span class="material-symbols-outlined text-4xl text-primary block opacity-70">mosque</span>
+              <span class="bg-gray-200 text-gray-600 border border-gray-300 text-[10px] font-bold uppercase tracking-wider px-2 py-1">IN DEV</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2">QuranHub</h3>
+            <p class="text-sm text-on-surface-variant">A dedicated Quran study platform with word-by-word translation, tafsir, and personalised study plans.</p>
+          </div>
+          <a href="https://github.com/Afrasyaab-GH/Quran-Reels-Generator" class="bg-surface-container-lowest border border-outline-variant p-8 group hover:border-secondary transition block relative" target="_blank" rel="noopener">
+            <div class="flex justify-between items-start mb-6">
+              <span class="material-symbols-outlined text-4xl text-primary block">smart_display</span>
+              <span class="bg-green-100 text-green-800 border border-green-200 text-[10px] font-bold uppercase tracking-wider px-2 py-1">LIVE · FREE &amp; OPEN SOURCE</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-primary mb-2 group-hover:text-secondary transition">Quran Reels Generator</h3>
+            <p class="text-sm text-on-surface-variant">Open-source Quranic video generator producing Reels, Shorts, and TikTok-ready content with Arabic text, English translation, and multiple reciters. Web + Windows desktop app.</p>
+          </a>
+          <a href="https://alhaq-initiative.org" class="bg-primary text-on-primary p-8 group hover:opacity-90 transition block relative" target="_blank" rel="noopener">
+            <div class="flex justify-between items-start mb-6">
+              <span class="material-symbols-outlined text-4xl text-on-primary block">volunteer_activism</span>
+              <span class="bg-secondary text-primary font-bold text-[10px] uppercase tracking-wider px-2 py-1">LIVE</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold mb-2">Alhaq Initiative</h3>
+            <p class="text-sm text-on-primary/80">Our non-profit wing — community welfare, educational resources, and charitable digital programmes.</p>
+          </a>
+        </div>
+      </section>
 
-<!-- Footer -->
-<footer>
-  <a class="nav-logo" href="/">
-    <div class="nav-logo-mark">A</div>
-    <span class="nav-logo-text">Al-Haq <span>Studio</span></span>
-  </a>
-  <div class="footer-links">
-    <a href="https://alhaq-initiative.org" target="_blank" rel="noopener">Al-Haq Initiative</a>
-    <a href="https://amnshield.com" target="_blank" rel="noopener">AmnShield</a>
-    <a href="mailto:contact@alhaq.uk">Contact</a>
-    <a href="https://alhaq-initiative.org/legal/privacy.html">Privacy</a>
-  </div>
-  <span class="footer-copy">© 2026 Al-Haq Studio · alhaq.uk</span>
-</footer>
+      <!-- SERVICES -->
+      <section id="services" class="bg-surface-container py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">What We Do</span>
+          <div class="w-16 h-1 bg-secondary mb-6"></div>
+          <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">Digital Services<br/>Done Right</h2>
+          <p class="text-on-surface-variant max-w-2xl mb-12 text-lg">From native Android apps to web platforms, we deliver clean, fast, and honest software.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">smartphone</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Android App Development</h3>
+              <p class="text-sm text-on-surface-variant">Native Kotlin applications with clean architecture, robust offline support, and zero telemetry. Built to Google Play standards.</p>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">lock</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Privacy & Security Consulting</h3>
+              <p class="text-sm text-on-surface-variant">App architecture review, data minimisation audits, and Google Play compliance — keeping your users' trust intact.</p>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">language</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Web Development</h3>
+              <p class="text-sm text-on-surface-variant">Fast, accessible, SEO-optimised websites and web apps. Firebase-hosted, Cloudflare-secured, and built to last.</p>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">settings</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Digital Solutions & Automation</h3>
+              <p class="text-sm text-on-surface-variant">Custom tooling, workflow automation, and system integrations that save time and reduce manual overhead.</p>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">rocket_launch</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Google Play Publishing</h3>
+              <p class="text-sm text-on-surface-variant">End-to-end app publishing — in-app billing setup, Play Console management, store listing optimisation, and policy compliance.</p>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-6 block">handshake</span>
+              <h3 class="text-lg font-bold text-primary mb-2">Tech Partnerships</h3>
+              <p class="text-sm text-on-surface-variant">Long-term collaborative partnerships for UK organisations and startups needing a trusted technical co-founder or studio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <script src="assets/js/assistant.js"></script>
-</body>
+      <!-- ABOUT DEVELOPER -->
+      <section id="about" class="bg-surface-container-low border-y border-outline-variant py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">The Founder &amp; Lead Architect</span>
+          <h2 class="text-3xl font-headline font-bold text-primary mb-6">Afrasyaab Meranai</h2>
+          <p class="text-base text-on-surface-variant max-w-2xl mx-auto mb-6 leading-relaxed">
+            Al-Haq Studio (Al-Haq.uk) was founded and is entirely developed and maintained by <strong>Afrasyaab Meranai</strong>.
+          </p>
+          <p class="text-sm text-on-surface-variant max-w-2xl mx-auto mb-8 leading-relaxed">
+            As a sole developer, Afrasyaab's mission is to design high-quality, local-first applications that safeguard digital wellness and help users protect their faith and attention in an era of constant distraction. Every product, from native Kotlin accessibility blocker modules to TensorFlow Lite neural network engines, is built offline-first without third-party tracking, advertising, or data sales.
+          </p>
+        </div>
+      </section>
+
+      <!-- VALUES -->
+      <section id="values" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">Our Principles</span>
+        <div class="w-16 h-1 bg-secondary mb-6"></div>
+        <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">Technology Rooted<br/>in Integrity</h2>
+        <p class="text-on-surface-variant max-w-2xl mb-12 text-lg">Every decision we make is guided by these non-negotiables.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-surface-container-low border border-outline-variant p-8 text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary block mb-4">lock</span>
+            <h3 class="text-lg font-bold text-primary mb-2">Privacy by Default</h3>
+            <p class="text-sm text-on-surface-variant">We collect no data we don't need. Your users' privacy is a right, not a feature.</p>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant p-8 text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary block mb-4">handshake</span>
+            <h3 class="text-lg font-bold text-primary mb-2">Honest Business</h3>
+            <p class="text-sm text-on-surface-variant">No dark patterns, no hidden fees, no manipulative design. We build things we'd give to our families.</p>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant p-8 text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary block mb-4">public</span>
+            <h3 class="text-lg font-bold text-primary mb-2">Community Impact</h3>
+            <p class="text-sm text-on-surface-variant">A portion of every product we build contributes to the Alhaq Initiative's welfare programmes.</p>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant p-8 text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary block mb-4">bolt</span>
+            <h3 class="text-lg font-bold text-primary mb-2">Craft & Quality</h3>
+            <p class="text-sm text-on-surface-variant">We ship things that work. Tested, optimised, and maintained — not abandoned after launch.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-primary py-20 text-center">
+        <div class="max-w-3xl mx-auto px-4">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-4 block">Get Started</span>
+          <h2 class="text-3xl md:text-5xl font-display font-bold text-on-primary mb-6">Have a Project in Mind?</h2>
+          <p class="text-lg text-on-primary/80 mb-10">Whether you need a mobile app, a web platform, or a trusted technical partner — we'd love to hear from you.</p>
+          <a href="mailto:contact@alhaq.uk" class="bg-secondary text-primary px-10 py-4 font-bold text-sm uppercase tracking-widest hover:bg-yellow-400 transition inline-block">contact@alhaq.uk</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-surface-container-lowest border-t border-outline-variant py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <a href="/" class="flex items-center gap-3 grayscale opacity-80">
+          <img src="/assets/images/alhaq_logo.png" alt="Al-Haq Studio Logo" class="h-8 rounded object-contain" onerror="this.style.display='none';" />
+          <span class="text-lg font-bold text-primary font-headline">Al-Haq <span class="text-secondary font-normal">Studio</span></span>
+        </a>
+        <div class="flex gap-6 flex-wrap justify-center">
+          <a href="https://alhaq-initiative.org" class="text-sm text-on-surface-variant hover:text-secondary transition" target="_blank" rel="noopener">Alhaq Initiative</a>
+          <a href="https://amnshield.com" class="text-sm text-on-surface-variant hover:text-secondary transition" target="_blank" rel="noopener">AmnShield</a>
+          <a href="mailto:contact@alhaq.uk" class="text-sm text-on-surface-variant hover:text-secondary transition">Contact</a>
+          <a href="https://alhaq-initiative.org/legal/privacy.html" class="text-sm text-on-surface-variant hover:text-secondary transition">Privacy</a>
+        </div>
+        <div class="text-xs text-on-surface-variant">© 2026 Al-Haq Studio · alhaq.uk</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/assistant.js"></script>
+    <script src="assets/js/preferences.js"></script>
+  </body>
 </html>
